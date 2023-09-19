@@ -2,12 +2,8 @@
 
 const fs = require('fs');
 
-const filePath = process.argv[2];
+const text = process.argv[3];
 
-fs.readFile(filePath, 'utf-8', function (err, data) {
-  if (err) {
-    console.error(`error: ${err}`);
-  } else {
-    console.log(data);
-  }
+fs.writeFile(process.argv[2], text, (err) => {
+  if (err) throw err;
 });

@@ -6,7 +6,7 @@ const apiUrl = process.argv[2];
 
 request(apiUrl, (error, response, body) => {
   if (error) {
-    console.error(`Erreur lors de la requête : ${error}`);
+    console.error(`Error : ${error}`);
   } else {
     const todos = JSON.parse(body);
 
@@ -25,4 +25,3 @@ request(apiUrl, (error, response, body) => {
     console.log(JSON.stringify(completedTasksByUser, null, 2));
   }
 });
-

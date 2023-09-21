@@ -25,3 +25,4 @@ request(apiUrl, (error, response, body) => {
     console.log(JSON.stringify(completedTasksByUser, null, 2));
   }
 });
+

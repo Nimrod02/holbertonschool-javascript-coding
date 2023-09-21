@@ -22,15 +22,6 @@ request(apiUrl, (error, response, body) => {
       }
     });
 
-    const formattedOutput = {};
-
-    for (const key in completedTasksByUser) {
-      formattedOutput[key] = completedTasksByUser[key];
-    }
-
-    const formattedOutputString = JSON.stringify(formattedOutput, null, 2)
-      .replace(/"(\d+)":/g, "'$1':");
-
-    console.log(formattedOutputString);
+    console.log(completedTasksByUser); // Affiche les résultats
   }
 });

@@ -22,6 +22,6 @@ request(apiUrl, (error, response, body) => {
       }
     });
 
-    console.log(completedTasksByUser); // Affiche les résultats
+    console.log(completedTasksByUser);
   }
 });

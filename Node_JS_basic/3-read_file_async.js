@@ -5,6 +5,7 @@ async function countStudents(path) {
     fs.readFile(path, 'utf-8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
+        return;
       }
 
       const lines = data.split('\n').filter(Boolean).slice(1).map((line) => {
@@ -18,8 +19,8 @@ async function countStudents(path) {
       const swe = lines.filter((student) => student.field === 'SWE');
 
       console.log(`Number of students: ${lines.length}`);
-      console.log(`Number of CS students: ${cs.length}. List: ${cs.map((student) => student.firstname).join(', ')}`);
-      console.log(`Number of SWE students: ${swe.length}. List: ${swe.map((student) => student.firstname).join(', ')}`);
+      console.log(`Number of students in ${field}: ${cs.length}. List: ${cs.map((student) => student.firstname).join(', ')}`);
+      console.log(`Number of students in ${field}: ${swe.length}. List: ${swe.map((student) => student.firstname).join(', ')}`);
       resolve();
     });
   });

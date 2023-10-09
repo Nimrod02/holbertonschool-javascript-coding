@@ -7,7 +7,7 @@ async function countStudents(path) {
         reject(new Error('Cannot load the database'));
       }
 
-      const lines = data.split('\n').slice(1).map((line) => {
+      const lines = data.split('\n').filter(Boolean).slice(1).map((line) => {
         const [firstname, lastname, age, field] = line.split(',');
         return {
           firstname, lastname, age, field,

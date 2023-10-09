@@ -19,8 +19,8 @@ async function countStudents(path) {
       const swe = lines.filter((student) => student.field === 'SWE');
 
       console.log(`Number of students: ${lines.length}`);
-      console.log(`Number of students in ${field}: ${cs.length}. List: ${cs.map((student) => student.firstname).join(', ')}`);
-      console.log(`Number of students in ${field}: ${swe.length}. List: ${swe.map((student) => student.firstname).join(', ')}`);
+      console.log(`Number of students in CS: ${cs.length}. List: ${cs.map((student) => student.firstname).join(', ')}`);
+      console.log(`Number of students in SWE: ${swe.length}. List: ${swe.map((student) => student.firstname).join(', ')}`);
       resolve();
     });
   });
